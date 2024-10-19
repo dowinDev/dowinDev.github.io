@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FoodSharing Map </title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playball&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+    <link href="lib/owlcarousel/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" href="../img/removed-background.png" type="image/x-icon">
+    <style>
+        /* Product List Container */
+        #productList {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 50px;
+            margin-top: -100px;
+            padding: 20px;
+            /* Add padding for spacing */
+        }
+
+        /* Individual Product Card */
+        .product-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            flex-basis: calc(33.33% - 40px);
+            /* Adjust card width based on container */
+            max-width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Hover Effect */
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Product Image */
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Product Information */
+        .product-info {
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .product-info h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .price {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        /* Button Styling */
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Responsive Media Query */
+        @media (max-width: 768px) {
+            .product-card {
+                flex-basis: calc(50% - 40px);
+                /* Adjust width for tablets */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                flex-basis: calc(100% - 40px);
+                /* Full width for mobile */
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- Spinner Start -->
+<div id="spinner"
+     class="show w-100 vh-100 bg-white position-fixed translate-middle top-50 start-50  d-flex align-items-center justify-content-center">
+    <div class="spinner-grow text-primary" role="status"></div>
+</div>
+<!-- Spinner End -->
+<!-- Navbar start -->
+<div id="header" class="container-fluid nav-bar header"></div>
+<!-- Navbar End -->
+
+<!-- Modal Search Start -->
+<div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content rounded-0">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex align-items-center">
+                <div class="input-group w-75 mx-auto d-flex">
+                    <input type="search" class="form-control bg-transparent p-3" placeholder="keywords"
+                           aria-describedby="search-icon-1">
+                    <span id="search-icon-1" class="input-group-text p-3"><i class="fa fa-search"></i></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal Search End -->
+
+<!-- Hero Start -->
+<div class="container-fluid bg-light py-6 my-6 mt-0">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-7 col-md-12">
+                <h1 class="display-1 mb-4 animated bounceInDown" style="font-size: 65px;">"Let's <span class="text-primary">share
+                        </span> <p>Reduce waste, help the community!"</p></h1>
+                <a href="./page/map.html"
+                   class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 me-4 animated bounceInLeft">Book
+                    Now</a>
+                <a href="./page/contact.html"
+                   class="btn btn-primary border-0 rounded-pill py-3 px-4 px-md-5 animated bounceInLeft">Know
+                    More</a>
+            </div>
+            <div class="col-lg-5 col-md-12">
+                <img src="img/hero.png" class="img-fluid rounded animated zoomIn" alt="">
+            </div>
+        </div>
+    </div>
+</div>
+<!-- hiển thị danh sách sản phẩm  -->
+<div>
+    <div id="productList">
+        <!-- Các sản phẩm sẽ được hiển thị tại đây -->
+    </div>
+</div>
+
+<script>
+    // Lấy thông tin sản phẩm từ LocalStorage
+    const productData = localStorage.getItem('product');
+    if (productData) {
+        const product = JSON.parse(productData);
+
+        document.getElementById('productList').innerHTML = `
+                <div class="product-card">
+                    <img src="${product.image}" alt="Product Image" class="product-image">
+                    <div class="product-info">
+                        <h3>${product.foodName}</h3>
+                        <p><strong>Quantity:</strong> ${product.quantity}</p>
+                        <p class="price">${product.price === 0 ? 'Free' : product.price + ' VND'}</p>
+                        <button class="button">Order Now</button>
+                    </div>
+                </div>
+            `;
+    } else {
+        document.getElementById('productList').innerHTML = '<p>No product to display.</p>';
+    }
+</script>
+<!-- kết thúc danh dách hiện sản phẩm  -->
+<!-- Hero End -->
+<!-- About Satrt -->
+<!-- Copyright Start -->
+<footer id="footer" class="text-center text-lg-start" style="color: #6f6c7f;"></footer>
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-md-square btn-primary rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/wow/wow.min.js"></script>
+<script src="lib/easing/easing.min.js"></script>
+<script src="lib/waypoints/waypoints.min.js"></script>
+<script src="lib/counterup/counterup.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="js/main.js"></script>
+</body>
+
+</html>
