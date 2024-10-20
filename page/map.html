@@ -93,6 +93,22 @@
     <input type="file" id="imageUpload" name="imageUpload" accept="image/*" required>
     <button id="butnhapmon" type="submit">Submit</button>
 </form>
+<script>
+    // Lắng nghe sự kiện thay đổi của price_option
+    document.getElementById('price_option').addEventListener('change', function () {
+        const priceInput = document.getElementById('price');
+        if (this.value === 'paid') {
+            // Khi chọn "Enter Price", bỏ thuộc tính disabled
+            priceInput.disabled = false;
+            priceInput.placeholder = 'Enter Price';
+        } else {
+            // Khi chọn "Free", thêm lại thuộc tính disabled
+            priceInput.disabled = true;
+            priceInput.placeholder = 'Price'; // Reset lại placeholder nếu cần
+            priceInput.value = ''; // Xóa giá trị đã nhập nếu có
+        }
+    });
+</script>
 <!-- Form thêm món ��n -->
 <!-- Hiển thị thông tin tọa độ sau khi click -->
 <script src="https://api.tomtom.com/maps-sdk-for-web/cdn/6.x/6.16.0/maps/maps-web.min.js"></script>

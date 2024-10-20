@@ -1,5 +1,5 @@
-.wrapper {
-    padding: 30px;
+.register {
+    padding: 50px;
     position: absolute;
     left: 50%;
     top: 50%;
@@ -9,7 +9,7 @@
 
 }
 
-.wrapper h1 {
+.register h1 {
     margin-bottom: 20px;
-
+    text-align: center;
 }

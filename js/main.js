@@ -200,6 +200,11 @@ function handlePageLoad() {
         case '/page/event.html':
             loadContent('/event', '/page/event.html');
             break;
+        case'/page/blog2.html':
+            loadContent('/blog', '/page/blog2.html');
+            break;
+        case'/index.html#':
+            break;
         default:
             loadContent('/home', '/index.html');
             break;
